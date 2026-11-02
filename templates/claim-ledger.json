@@ -1,0 +1,21 @@
+{
+  "_comment": "Source/claim ledger. One row per factual claim used on the site (RTP, provider identity, max win, legal/regulator status, tax treatment, operator availability, helpline). Fill from primary or authoritative sources. 'Unknown stays unknown' - never invent to fill a row. This backs the EEAT/sourcing of the site.",
+
+  "claims": [
+    {
+      "claim": "e.g. declared RTP is up to 98%",
+      "value": "",
+      "source_url": "",
+      "source_type": "provider | regulator | public-institution | reputable-local",
+      "date_checked": "YYYY-MM-DD",
+      "applies_to_version": "",
+      "evidence": "quote or screenshot path",
+      "limitation": "e.g. declared, operator-dependent, long-run average not a guarantee",
+      "reuse_rights": "e.g. attributed fact, no asset reuse"
+    }
+  ],
+
+  "unknowns": [
+    "List facts you could NOT verify. These must be presented as unknown on the site, never invented."
+  ]
+}

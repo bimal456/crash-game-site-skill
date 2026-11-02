@@ -1,0 +1,134 @@
+{
+  "_comment": "Project contract for a crash-game affiliate site (single geo or multi-geo editions). Copy to PROJECT.json and fill with CONFIRMED or SOURCED values only. Never invent domain, provider, ownership, contact or host account.",
+  "game_name": "",
+  "sequel_name": "",
+  "sequel_slug": "",
+  "provider_studio": "",
+  "provider_url": "",
+  "provider_restricted_countries_url": "",
+  "domain": "",
+  "canonical_origin": "https://",
+  "trailing_slash": "yes",
+  "org_name": "<the domain, e.g. chickenroad.radio.am>",
+  "editions": [
+    {
+      "code": "en",
+      "folder": "/",
+      "hreflang": "en",
+      "og_locale": "en_GB",
+      "x_default": true,
+      "language": "English (global)"
+    },
+    {
+      "code": "it",
+      "folder": "/it/",
+      "hreflang": "it-IT",
+      "og_locale": "it_IT",
+      "language": "Italian",
+      "localization_pack": {
+        "regulator": "",
+        "legal_status_truth": "",
+        "provider_restricts_geo": null,
+        "tax_on_winnings": "",
+        "tax_source_url": "",
+        "helpline": "",
+        "self_exclusion": "",
+        "payment_methods": [],
+        "withdrawal_times_note": ""
+      },
+      "primary_keyword": "",
+      "money_query_for_serp": ""
+    }
+  ],
+  "pages": [
+    "home",
+    "demo",
+    "<sequel_slug>",
+    "payments",
+    "about",
+    "contact",
+    "responsible-gambling",
+    "privacy",
+    "cookie-policy",
+    "terms",
+    "404"
+  ],
+  "word_targets": {
+    "home": "2700-3000 (never over 3000)",
+    "demo_sequel_payments": "1500-1800",
+    "about": "900-1300",
+    "contact": "400-700",
+    "responsible_gambling": "800-1200",
+    "privacy_terms": "700-1100",
+    "cookie_policy": "400-700"
+  },
+  "affiliate": {
+    "tracking_url": "",
+    "is_placeholder": true,
+    "cta_href": "https://<domain>/play",
+    "cloak": "_redirects: /play, /play/, /play/* 302 -> tracking_url; /login* 301 -> /play",
+    "cta_rel": "nofollow sponsored noopener",
+    "cta_target": "_blank"
+  },
+  "voice": {
+    "byline": "Updated <date> · Sources (-> about/#method)",
+    "article_author": "Organization (#org)",
+    "banned_positioning": [
+      "guide",
+      "information/info site",
+      "review",
+      "independent",
+      "unofficial",
+      "not affiliated",
+      "editorial team",
+      "verdict"
+    ],
+    "first_person_on_game_pages": false,
+    "toc": false
+  },
+  "contact_email": "contact@<domain>",
+  "owner_does_not_want": [
+    "mailbox setup push",
+    "Search Console / console work"
+  ],
+  "hosting": {
+    "host": "Cloudflare Pages",
+    "account_id": "",
+    "project_name": "",
+    "deploy_mode": "direct upload (SITE zip, index.html at root)",
+    "verified_before_deploy": false
+  },
+  "research": {
+    "ahrefs_done": false,
+    "dataforseo_serp_done": false,
+    "competitor_outlines_done": false,
+    "claim_ledger_done": false
+  },
+  "hard_rules": [
+    "no guide/information/review/independent/not-affiliated positioning in any language",
+    "no we/our on game pages; talk about the game and to the player",
+    "no table of contents",
+    "designed blocks on 5-6 home sections only; RG plain; no Conclusion",
+    "every CTA -> https://<domain>/play; tracking URL only in _redirects",
+    "meta description exactly 158 chars; title <= 60",
+    "no agency name, no 18+ badge, no em/en dashes, no Review/Rating schema",
+    "no fabricated reviews, ratings, win data or test claims; no promised wins"
+  ],
+  "brand_design": {
+    "_comment": "Fill from references/brand-design-research.md BEFORE any CSS or image work (SKILL.md step 1b).",
+    "official_sources_checked": [
+      "<provider game page URL>",
+      "<press kit / app listing / official social banner URL>"
+    ],
+    "primary": "#______",
+    "accent": "#______",
+    "accent_2": "#______",
+    "mood": "<playful | dark-intense | neon-arcade | minimal-premium>",
+    "logo": "<official asset URL, or 'original wordmark' if none could be sourced cleanly>",
+    "palette_applied_to": [
+      "assets/style.css :root (incl. the tint/rgb tokens)",
+      "scripts/make_images.py CONFIG block"
+    ],
+    "no_official_signal_found": false
+  }
+}
