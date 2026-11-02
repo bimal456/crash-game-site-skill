@@ -1,0 +1,76 @@
+{
+  "lang_name": "English",
+  "edition_name": "Global",
+  "site_name": "Chicken Road",
+  "descriptor": "How it works, if it pays, where to play",
+  "logo_alt": "Chicken Road logo, cartoon hen",
+  "skip": "Skip to content",
+  "menu": "Menu",
+  "nav_aria": "Main menu",
+  "nav": {
+    "home": "Home",
+    "demo": "Demo",
+    "chicken-road-2": "Chicken Road 2",
+    "payments": "Payments",
+    "about": "About us",
+    "contact": "Contact",
+    "responsible-gambling": "Responsible gambling",
+    "privacy": "Privacy",
+    "cookie-policy": "Cookie policy",
+    "terms": "Terms"
+  },
+  "breadcrumb_aria": "Breadcrumb",
+  "toc_title": "On this page",
+  "byline_by": "",
+  "team": "chickenroad.radio.am",
+  "updated": "Updated",
+  "date_human": "29 October 2026",
+  "method_link": "Sources",
+  "cta": {
+    "title": "Ready to try Chicken Road?",
+    "text": "Play the free demo first, then only play for real money at a licensed casino where it is legal for you. Deposit only what you can afford to lose.",
+    "button": "Play Chicken Road",
+    "demo": "Try the free demo first"
+  },
+  "cta2": {
+    "title": "Pick a licensed casino",
+    "text": "Check the licence on the regulator's website and confirm InOut Games in the info panel. Only play where online casino gaming is legal for you.",
+    "button": "See where to play",
+    "demo": "Practise in the demo"
+  },
+  "cta3": {
+    "title": "Read the bonus terms first",
+    "text": "A bonus is not free money: check the rollover and whether crash games count. Start in the demo and set a deposit limit before you play.",
+    "button": "View the offer",
+    "demo": "Play the demo instead"
+  },
+  "cta_note": "Promotional link. Opens the operator in a new tab. Play responsibly.",
+  "fig": {
+    "gameplay_alt": "Illustration of the Chicken Road game board: hen, lanes and multipliers",
+    "gameplay_caption": "Illustrative diagram, not an in-game screenshot. Tap to open the free demo page.",
+    "gameplay_aria": "Open the Chicken Road demo page",
+    "mascot_alt": "Cartoon hen crossing a road, artwork for Chicken Road 2",
+    "mascot_caption": "Original artwork. Tap for the Chicken Road 2 page.",
+    "mascot_aria": "Open the Chicken Road 2 page",
+    "sequel_alt": "Illustration of Chicken Road 2 with longer lanes",
+    "sequel_caption": "Illustrative artwork, not an in-game screenshot. Tap to open the demo page.",
+    "sequel_aria": "Open the Chicken Road demo page"
+  },
+  "related_title": "Related pages",
+  "related_desc": {
+    "home": "How Chicken Road works, whether it really pays and how to play it safely.",
+    "demo": "Play Chicken Road free with no deposit and test every difficulty mode.",
+    "chicken-road-2": "The sequel compared: RTP, lanes, max win and what changed.",
+    "payments": "Deposits, withdrawal times, KYC, payment scams and tax on winnings.",
+    "about": "What this site covers, where the facts come from and how the pages are funded.",
+    "responsible-gambling": "Warning signs, practical limits, self-exclusion and free helplines."
+  },
+  "editions_label": "Editions",
+  "footer_about": "How the Chicken Road crash game by InOut Games works, the free demo, Chicken Road 2, payments and where it is legal to play, with scam warnings and safe-play tips.",
+  "footer_rg": "Gambling involves risk of loss. Set limits and stop if it stops being fun. Help: Gambling Therapy, gamblingtherapy.org, or your national helpline.",
+  "footer_legal": "Chicken Road is a trademark of InOut Games. Trademarks belong to their owners.",
+  "footer_copy": "© 2026 chickenroad.radio.am",
+  "back_home": "Back to home",
+  "notfound_title": "Page not found",
+  "notfound_text": "This page does not exist or has moved. Head back to the home page, or try the free Chicken Road demo instead."
+}
