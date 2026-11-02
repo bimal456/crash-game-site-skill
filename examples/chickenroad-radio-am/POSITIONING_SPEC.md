@@ -1,0 +1,15 @@
+# Positioning fix (owner rule, overrides CONTENT_SPEC where they conflict)
+
+The owner's standing rule for his affiliate sites: the site must NOT position itself as a "guide", as an "information / info / informational site", or as independent / unofficial / not affiliated. No disclaimer voice like "independent site", "independent information site", "not affiliated with InOut Games or any casino", "we are not the operator / not a casino", "unofficial", "no games hosted here", in ANY language, anywhere (strings.json, titles, meta, eyebrows, H1, body, about/privacy/terms, alt text, captions, footer).
+
+What to do in `content/<ed>/`:
+1. strings.json:
+   - `independence`: DELETE the key entirely (owner rule, round 4: no disclosure line on any page, in any language). The affiliate disclosure survives only as `rel="nofollow sponsored noopener"` on CTAs and as the disclosure SECTION in the about/terms body copy.
+   - `footer_about`: 1-2 sentences describing what the site covers, in plain terms, e.g. "How the Chicken Road crash game by InOut Games works, the free demo, payments and where it is legal to play." No "review", no "editorial team", no "information/info site", no "independent", no "not affiliated".
+   - `footer_legal`: keep only the trademark line, e.g. "Chicken Road is a trademark of InOut Games." (localized), plus any country legal note that must stay. No disclosure sentence, no "independent site", no "not affiliated".
+   - `descriptor`, `logo_alt`, `fig.*`, `related_desc`, `cta*`, `team`: remove any "info/information site" or "independent" framing (e.g. "Real info: ..." -> "How it works, if it pays, where to play").
+2. Pages: rewrite every sentence that positions the site as independent / unaffiliated / an information site. Typical places: about (who we are, independence section: delete that section or turn it into a neutral "how we work" paragraph; keep the #method and #sources-we-use sections), terms and privacy (who runs the site), home lead / eyebrow / review section, contact. Keep the honest affiliate disclosure ("we earn a commission through promotional links", rel sponsored) and the honest facts about InOut Games as the game's maker (third person). Do NOT claim the site is official or run by InOut Games or by any casino.
+3. Generic uses of the word information that are not about what the site is (e.g. "personal information" in privacy, "the in-game info panel", "more information from the regulator") may stay. Unrelated uses of "independent" (e.g. an independent dispute-resolution body) must be rephrased because the checker bans the stem; e.g. "an approved dispute-resolution service".
+4. Keep all other rules (word ranges, meta exactly 158, link rules, banned words, 5-6 designed sections on home, RG plain). If you delete an about section, make sure word counts still pass and no `#anchor` points to a removed id.
+
+Finish when `python3 /home/claude/chickenroad/tools/check_content.py <ed>` prints ALL OK (it now also fails on positioning wording). Reply in 3-5 lines: what you changed.
