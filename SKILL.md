@@ -38,6 +38,12 @@ Design:
 - No inline `style=` and no inline `on*` handlers (CSP `style-src 'self'`). All hover effects in the stylesheet.
 - Breadcrumb plain (no box), slightly indented.
 
+
+Header navigation (mandatory):
+- Keep country editions out of the header navigation: Pakistan lives at `/pk/`, Italy at `/it/`, and other editions at their country-code paths. Put any country/language switcher in the footer; do not add countries as ordinary header pages.
+- Include Home and all five mandatory trust pages in the header of every page and edition: About & Sources, Contact, Responsible Gambling, Privacy and Terms (localized labels where needed). Keep links within the current edition, e.g. `/pk/privacy/` on the Pakistan edition, and retain the footer links too.
+- On mobile/tablet, keep all these links accessible inside the responsive Menu without horizontal overflow. Before release, check their presence and correct edition URLs on desktop and mobile; do not remove required links just to make the header fit.
+
 CTA / affiliate:
 - **Every** play CTA links to the full URL `https://<domain>/play` with `target="_blank" rel="nofollow sponsored noopener"`. Owner rule: hovering ANY CTA, anywhere on the site, must show `<domain>/play` in the browser status bar. Not `/play`, not a relative path, not the tracking link. Check this by hovering a CTA on the home page, a game page and the footer before calling a build done.
 - `/play` (and `/play/`, `/play/*`) is a **302 in `_redirects`** to the tracking URL. The tracking URL lives only in `_redirects`, never in crawlable HTML. `/login` 301 to `/play` if an old cloak existed.
