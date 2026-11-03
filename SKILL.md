@@ -29,7 +29,7 @@ Voice and positioning (owner rules, these override anything else in this skill):
 - Never claim to be the official game site and never write as the provider or as a casino. The provider stays the game's maker in third person.
 - **No visible promotional-disclosure line anywhere, at all, in any language, on any page** (owner rule, round 4). No "Contains promotional links." / "Enthält Werbelinks." / "Contiene link promozionali." / "इसमें प्रमोशनल लिंक हैं।" and no localized equivalent, not in the opening block, not in the footer, not in `strings.json`. There is no `independence` string and no `.disclosure` paragraph. The machine-readable disclosure stays: every CTA keeps `rel="nofollow sponsored noopener"`, and the affiliate-disclosure SECTION in the about/terms body copy stays (that is page content, not a site-wide banner line).
 - No "guide" or local equivalents (guida, gids, guía, Leitfaden, Ratgeber, przewodnik, poradnik, गाइड): zero matches for "guid".
-- No em dash or en dash. No "18+" badge, filter or age gate. No agency name (never "KAP" / "KAP Digital"). No Review / AggregateRating / Rating schema. No fake reviews, testimonials, ratings, win data, "1200 rounds tested" claims. No promised wins, no working "tricks".
+- No em dash or en dash. No "18+" anywhere: no badge, no filter, no age gate, and no pop-up, modal, overlay or interstitial of any kind (the site never interrupts the visitor with a box they must dismiss). No agency name (never "KAP" / "KAP Digital"). No Review / AggregateRating / Rating schema. No fake reviews, testimonials, ratings, win data, "1200 rounds tested" claims. No promised wins, no working "tricks".
 
 Design:
 - **The site must look like a game/brand site, never a blog, magazine, review or informational site.** Before any CSS or image work, research the actual game/provider's official colors and visual mood (`references/brand-design-research.md`) and build the palette from that — never ship the skill's placeholder chicken-yolk-yellow/navy colors on a new brand. If the official brand is light/pale, use light colors; match what is actually official, don't invent "bold" colors that aren't the brand's.
@@ -39,9 +39,12 @@ Design:
 - Breadcrumb plain (no box), slightly indented.
 
 CTA / affiliate:
-- **Every** play CTA links to the full URL `https://<domain>/play` with `target="_blank" rel="nofollow sponsored noopener"`.
+- **Every** play CTA links to the full URL `https://<domain>/play` with `target="_blank" rel="nofollow sponsored noopener"`. Owner rule: hovering ANY CTA, anywhere on the site, must show `<domain>/play` in the browser status bar. Not `/play`, not a relative path, not the tracking link. Check this by hovering a CTA on the home page, a game page and the footer before calling a build done.
 - `/play` (and `/play/`, `/play/*`) is a **302 in `_redirects`** to the tracking URL. The tracking URL lives only in `_redirects`, never in crawlable HTML. `/login` 301 to `/play` if an old cloak existed.
 - `/play` is `Disallow`-ed in robots.txt, gets `X-Robots-Tag: noindex, nofollow, noarchive`, never in the sitemap.
+
+URLs:
+- **No `#` in any URL** (owner rule). No `href` anywhere points at a fragment: no `about/#method` byline link, no in-page jump links, no `{{BASE}}#legal-status` section links. Every link goes to a plain page URL with a trailing slash. If a link wants to send the reader to a particular part of a page, link the page and say in the sentence what is there. The only two exceptions, both invisible to the reader and neither a navigable URL: the keyboard skip link (`href="#main"`, required for accessibility) and the JSON-LD `@id` node identifiers (`/#org`, `#faq`), which are schema.org plumbing, not links. `qa_site.py` fails the build on anything else.
 
 SEO formatting:
 - Title 60 characters max, primary keyword first, includes the year.
