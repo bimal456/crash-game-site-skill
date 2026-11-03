@@ -238,7 +238,7 @@ def opening(ed, meta):
 <span class="eyebrow">{esc(meta['eyebrow'])}</span>
 <h1>{esc(meta['h1'])}</h1>
 <p class="lead">{meta['lead']}</p>
-<p class="byline">{esc(s['updated'])} <time datetime="{DATE}">{esc(s['date_human'])}</time> · <a href="{path_of(ed, 'about')}#method">{esc(s['method_link'])}</a></p>
+<p class="byline">{esc(s['updated'])} <time datetime="{DATE}">{esc(s['date_human'])}</time> · <a href="{path_of(ed, 'about')}">{esc(s['method_link'])}</a></p>
 </div></div>'''
 
 

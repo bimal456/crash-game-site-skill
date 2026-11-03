@@ -98,6 +98,18 @@ def main():
         if re.search(r'[—–]', raw): fails.append(f'{site_path}: em/en dash')
         if re.search(r'18\s*\+', raw): fails.append(f'{site_path}: "18+"')
         if re.search(r'\bKAP\b', raw): fails.append(f'{site_path}: "KAP"')
+        # Owner rule: no '#' in any URL a reader can click. Allowed: the keyboard skip
+        # link (#main) and JSON-LD @id node identifiers, neither of which is navigable.
+        body_only = re.sub(r'<script[^>]*>.*?</script>', '', raw, flags=re.S | re.I)
+        for href in re.findall(r'<a\b[^>]*href="([^"]*#[^"]*)"', body_only, re.I):
+            if href == '#main':
+                continue
+            fails.append(f'{site_path}: link to a fragment (owner rule: no # in any URL): {href}')
+        # Owner rule: no pop-up / modal / overlay / age gate of any kind.
+        for pat in (r'class="[^"]*\b(modal|overlay|popup|pop-up|interstitial|age-gate|agegate)\b',
+                    r'<dialog\b', r'\bshowModal\s*\('):
+            if re.search(pat, body_only, re.I):
+                fails.append(f'{site_path}: pop-up/modal/overlay markup matched /{pat}/')
         if TRACKING_URL in raw: fails.append(f'{site_path}: tracking URL in crawlable HTML')
         if ' style="' in raw: fails.append(f'{site_path}: inline style=')
         if s.inline: fails.append(f'{site_path}: inline attrs {sorted(set(s.inline))}')

@@ -94,6 +94,9 @@ class P(HTMLParser):
         for k in a:
             if k == 'style' or k.startswith('on'):
                 self.errors.append(f'inline {k}= attribute on <{tag}>')
+        if tag == 'a' and '#' in (a.get('href') or ''):
+            # Owner rule: no '#' in any URL. Link the page, not a fragment of it.
+            self.errors.append(f'link to a fragment (owner rule: no # in any URL): {a.get("href")}')
         if tag == 'div' and a.get('class') not in DIV_CLASSES:
             self.errors.append(f'div with bad class {a.get("class")!r}')
         if tag == 'ol' and a.get('class') not in (None, 'steps'):
