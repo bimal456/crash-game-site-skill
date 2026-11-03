@@ -58,6 +58,7 @@ SEO formatting:
 - Ahrefs per geo: `keywords-explorer-matching-terms`, `keywords-explorer-overview`, `serp-overview`. One intent = one keyword, one primary keyword per edition, secondaries mapped to sections/pages.
 - Live SERP per geo: DataForSEO `/v3/serp/google/organic/live/regular` with the geo location + language for the primary money query ("<game> paga davvero", "<game> seriös", "<game> avis" ...). Save the informational competitor URLs to `research/serp-<ed>.md`.
 - Mine 3-5 competitor outlines per edition (H2/H3, FAQ, tables vs prose, word count) into `research/outlines-<ed>.md`. Cover what leaders share plus the gaps. Never copy text or their false claims.
+- **Write down the PAGE INVENTORY while you are in there**: which pages each ranking site has for this game (demo, strategy, RTP/odds, app, bonus, payments, per-country legal ...), and how many of them have each. That list decides the site's content pages in step 2. It is per game: do not assume the last build's pages.
 - Game facts with sources into `research/facts.md` and `claim-ledger.json`: provider page, RTP, modes, lanes, max win, release, sequel specs. Mark third-party numbers as operator-dependent.
 - **Check the provider's restricted-countries page.** (InOut Games lists UK, France, Australia, Netherlands, Spain, Italy, Germany, Poland, USA ... as restricted.) Where the geo is restricted, never imply the game is available at locally licensed operators.
 - Localization pack per geo (`references/multi-geo-editions.md`): regulator, legal truth, tax, helpline, self-exclusion, payment methods. Verify on official sources.
@@ -71,8 +72,12 @@ SEO formatting:
 
 ### 2. Structure (`references/multi-geo-editions.md`)
 - Single geo: pages at the root. Multi-geo: English global at `/` (x-default), each country at `/<code>/` (`/in/`, `/it/`, `/de/`, `/es/`, `/fr/`, `/uk/`, `/pl/`, `/nl/`, `/ca/`, `/au/`), same page slugs in every edition.
-- Pages per edition: home, demo, `<sequel-slug>` (if a sequel exists), payments (+ tax), about, contact, responsible-gambling, privacy, cookie-policy, terms, plus the 404.
-- Word targets: home 2700-3000 (never over 3000), demo/sequel/payments 1500-1800, about 900-1300, contact 400-700, RG 800-1200, privacy/terms 700-1100, cookie 400-700.
+- **The page set is five fixed pages plus whatever the SERP research says to build. Do not reuse the last site's page list.**
+  - **Always, every edition, no exceptions:** `about`, `contact`, `responsible-gambling`, `terms`, `privacy`. Plus `home` and the 404.
+  - **Then the money/content pages come from step 1's research**, not from this file: take the page inventory from `research/outlines-<ed>.md` (what the sites ranking for the primary keyword actually have for THIS game) and build those. For a Chicken Road type game that came out as demo, the sequel page and payments. Another game will produce a different set: strategy, RTP/odds, app or download, bonus, a per-country legal page, whichever the leaders rank with. If a page type shows up on most of the ranking sites, it is in; if it shows up on none of them, it is not.
+  - `cookie-policy` is NOT one of the five. Add it only when the site or its host actually sets a cookie, or when an EU edition's privacy page needs to link one.
+- Set the researched page list in `PAGES` (build.py) and add a `WORD_RANGE` and `LINK_REQ` entry for every page in it (`check_content.py`), or the checker will not know the page exists.
+- Word targets: home 2700-3000 (never over 3000), each content page 1500-1800, about 900-1300, contact 400-700, RG 800-1200, privacy/terms 700-1100, cookie 400-700.
 
 ### 3. Content (`references/content-blueprint.md`, `references/voice-and-positioning.md`)
 - One writer per edition in the native language (Hindi in Devanagari etc.), using `examples/chickenroad-radio-am/CONTENT_SPEC.md` as the file-format contract (front matter + `<section id>` bodies, `{{BASE}}` links, `<!--CTA-->`, `<!--FIG:...-->` markers, strings.json schema).
