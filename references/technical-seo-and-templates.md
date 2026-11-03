@@ -22,11 +22,13 @@ Same hreflang set on every page of the cluster and repeated in `sitemap.xml` wit
 ## Page header / opening (no author, no TOC)
 ```html
 <p class="eyebrow">...</p><h1>...</h1><p class="lead">...</p>
-<p class="byline">Updated <time datetime="{{DATE}}">29 October 2026</time> · <a href="{{BASE}}about/#method">Sources</a></p>
+<p class="byline">Updated <time datetime="{{DATE}}">29 October 2026</time> · <a href="{{BASE}}about/">Sources</a></p>
 ```
 - No "By editorial team / Redazione / Redaktion", no "Independent site", no "Review" byline.
 - **No disclosure line at all** (owner rule, round 4): no `<p class="disclosure">`, no `independence` string. The opening block is eyebrow, H1, lead, byline. Nothing else.
 - **No table of contents.** `.layout` is one column, `max-width:900px`, centered.
+- **No `#` in any href.** The byline links to `{{BASE}}about/`, not `about/#method`. Only the skip link (`#main`) and the JSON-LD `@id` values (`/#org`, `#faq`) may contain `#`; nothing a reader can click may.
+- **No pop-up, modal, overlay or interstitial** of any kind, and no "18+" gate. Nothing is ever layered over the page.
 
 ## JSON-LD (never Review / AggregateRating / Rating)
 One `@graph` per page:

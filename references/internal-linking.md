@@ -22,4 +22,4 @@ Nav, footer, breadcrumb and the "related pages" cards exist on every page, but t
 - Anchor text 2-6 descriptive words in the edition's language, keyword-aware but varied (exact, partial, natural). Never "click here / here / read more" or local equivalents. No identical anchor for the same target twice on one page. Max 4 links to one target per page.
 - Spread them through the page, roughly one per 100-150 words on content pages.
 - Links always use the edition base + trailing slash (`{{BASE}}demo/`), so ranking never splits across URL variants.
-- In-page anchors (`#section-id`) and section links (`{{BASE}}#legal-status`) must point to ids that exist.
+- **Never link to a fragment.** No in-page anchors (`#section-id`), no section links (`{{BASE}}#legal-status`), no `{{BASE}}about/#method`. Link the page itself (`{{BASE}}about/`) and let the sentence say what the reader will find there. Section `id` attributes stay on the sections (the markup needs them); nothing links to them.

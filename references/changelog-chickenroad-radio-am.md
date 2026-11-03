@@ -85,6 +85,30 @@ sponsored noopener"` on all 77 CTAs, the affiliate-disclosure section in the
 about/terms body copy, and `cta_note` ("Promotional link. Opens the operator
 in a new tab."). Flagged to the owner rather than removed on my own.
 
+## Round 5 (November 2026): CTA hover target, no "#" in URLs, no pop-ups
+
+Owner: "jab CTA pe lgao toh front pe hover krne pe har CTA pe aana chaiye -
+domain/play & kisi bhi URL pe # nhi hona chaiye koi 18+ ka pop up bhi nhi
+chahiye mereko."
+
+| # | Rule now | Where enforced |
+|---|---|---|
+| 20 | Hovering ANY CTA must show `<domain>/play` in the status bar. Not `/play`, not a relative path, never the tracking link. Hover-check a CTA on the home page, a game page and the footer before calling a build done. | SKILL.md CTA rules, build.py (absolute `{DOMAIN}/play`), qa_site.py (tracking URL must not appear in HTML) |
+| 21 | **No `#` in any URL.** No `href` points at a fragment: the byline links to `about/`, not `about/#method`; no in-page jump links; no `{{BASE}}#legal-status`. Link the page and let the sentence say what is there. Section `id` attributes stay on sections; nothing links to them. | build.py byline, check_content.py (per-link failure), qa_site.py (fails the build) |
+| 22 | **No pop-up, modal, overlay, interstitial or age gate**, and no "18+" anywhere. Nothing is ever layered over the page. | SKILL.md hard rules, qa_site.py (matches `modal`/`overlay`/`popup`/`interstitial`/`age-gate` classes, `<dialog>`, `showModal(`) |
+
+Two deliberate exceptions to rule 21, both invisible to the reader and
+neither a navigable URL: the keyboard skip link (`href="#main"`, required
+for accessibility, and the skill's own QA tests it) and the JSON-LD `@id`
+node identifiers (`/#org`, `#faq`), which are schema.org plumbing. Both are
+whitelisted in `qa_site.py`; everything else fails the build.
+
+NOTE: chickenroad.radio.am's own content files still carry ~65 fragment
+links (`about/#method`, `about/#corrections`, `#legal-espana`,
+`#bharat-mein-kanoon` and similar) plus the byline fix that build.py now
+applies automatically. Those content links were NOT rewritten in this round
+and the checker will fail on them until they are.
+
 ## Round 3 (November 2026): design was never researched per brand
 
 The owner's correction: every site built from this skill shipped with the
