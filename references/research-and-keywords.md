@@ -45,3 +45,11 @@ One intent = one keyword (word-order flips and synonyms are the same keyword). O
 
 ## Output before building
 Per edition: primary keyword + mapped secondaries, Ahrefs overview numbers, live SERP list, competitor outlines, localization pack, provider restriction status. Shared: facts.md + claim ledger.
+
+## Page inventory (decides what gets built)
+
+While mining competitor outlines, record WHICH PAGES each ranking site has for this game, not only their headings. One row per page type, one column per competitor, plus a count.
+
+The five trust pages (`about`, `contact`, `responsible-gambling`, `terms`, `privacy`) are built on every site regardless of what competitors do. Everything else is decided here: a page type that most ranking sites have gets built, one that none of them have does not. Different games produce different sets, so never carry a page list over from the previous build.
+
+Hand the finished inventory to step 2, where it becomes `PAGES` in `build.py` and the matching `WORD_RANGE` / `LINK_REQ` entries in `check_content.py`.

@@ -85,6 +85,19 @@ sponsored noopener"` on all 77 CTAs, the affiliate-disclosure section in the
 about/terms body copy, and `cta_note` ("Promotional link. Opens the operator
 in a new tab."). Flagged to the owner rather than removed on my own.
 
+## Round 6 (November 2026): the page set is researched, not fixed
+
+Owner: the five mandatory pages are about us, contact us, responsible gambling, T&C and privacy policy; after that, build the pages the sites ranking in the SERP for that game actually have.
+
+Before this round the skill shipped ONE hardcoded page list (home, demo, sequel, payments, about, contact, responsible-gambling, privacy, cookie-policy, terms) and nothing anywhere tied the page set to research. Every game got Chicken Road's pages.
+
+| # | Rule now | Where enforced |
+|---|---|---|
+| 23 | Five trust pages in every edition, always: `about`, `contact`, `responsible-gambling`, `terms`, `privacy`. Plus `home` and the 404. | SKILL.md step 2, multi-geo-editions.md, acceptance checklist |
+| 24 | Content pages come from the SERP page inventory for THAT game, recorded during step 1 alongside the competitor outlines. A page type most ranking sites have gets built; one none of them have does not. Never carry a page list from the previous build. | SKILL.md steps 1 and 2, research-and-keywords.md, project.json |
+| 25 | `cookie-policy` is not one of the five: add it only when something actually sets a cookie or an EU edition's privacy page links one. | SKILL.md step 2, multi-geo-editions.md |
+| 26 | The researched list goes into `PAGES` (build.py) and needs a `WORD_RANGE` and `LINK_REQ` entry per page (check_content.py), or the checker does not know the page exists. | SKILL.md step 2, acceptance checklist |
+
 ## Round 5 (November 2026): CTA hover target, no "#" in URLs, no pop-ups
 
 Owner: "jab CTA pe lgao toh front pe hover krne pe har CTA pe aana chaiye -

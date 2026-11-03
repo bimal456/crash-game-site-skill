@@ -4,6 +4,8 @@
 - English global edition at the root `/` = hreflang `en` + `x-default`.
 - Each country edition in its own folder: `/in/` (hi-IN), `/it/` (it-IT), `/de/` (de-DE), `/es/` (es-ES), `/fr/` (fr-FR), `/uk/` (en-GB), `/pl/` (pl-PL), `/nl/` (nl-NL), `/ca/` (en-CA), `/au/` (en-AU). Add others the same way (`/br/` pt-BR, `/fi/` fi-FI ...).
 - Same page slugs in every edition (`/it/demo/`, `/it/payments/`), trailing slash everywhere.
+- **Which pages exist is not fixed by this skill.** Five trust pages are always built in every edition: `about`, `contact`, `responsible-gambling`, `terms`, `privacy`, plus `home` and the 404. The content pages come from the SERP page inventory in `research/outlines-<ed>.md`: build the page types that the sites ranking for this game actually have. `cookie-policy` is an extra, added only when something really sets a cookie or an EU edition's privacy page links one.
+- The page set is the same across editions even though it is researched per edition: take the union where the leaders agree, and keep slugs identical so the editions switcher and hreflang line up. A page that genuinely only makes sense in one country (a local legal page) may exist in that edition alone; then its hreflang set covers only the editions that have it.
 - Every page carries hreflang alternates for all editions that have that page + x-default, a self canonical, `og:locale` + `og:locale:alternate`. The sitemap repeats the alternates with `xhtml:link`.
 - Footer has an editions switcher (same page in every edition, `hreflang` on each link).
 - English editions (global, UK, Canada, Australia) are written separately with local spelling, currency, law and payments. Never copy one English edition into another.
