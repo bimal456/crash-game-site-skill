@@ -2,7 +2,7 @@
 
 Goal: every page of the edition links naturally, inside its prose, to the other pages of the SAME edition, so link equity and topical relevance flow through the site (the header nav, footer and "related pages" block already exist; this pass is about in-text links).
 
-Edit only `content/<ed>/*.html` (not strings.json). Links use `<a href="{{BASE}}slug/">anchor</a>` (home = `{{BASE}}`), trailing slash, about method = `{{BASE}}about/#method`.
+Edit only `content/<ed>/*.html` (not strings.json). Links use `<a href="{{BASE}}slug/">anchor</a>` (home = `{{BASE}}`), trailing slash, and never a fragment (no `#` in any href: link `{{BASE}}about/`, not `about/#method`).
 
 Minimum contextual links per page (checker enforces):
 - home -> demo 2, chicken-road-2 2, payments 2, about 1 (prefer about/#method), responsible-gambling 1, contact 1
