@@ -5,7 +5,7 @@ Each stage gets: PROJECT.json, the spec files from `examples/chickenroad-radio-a
 Voice rules (`references/voice-and-positioning.md`) go into EVERY stage prompt from the start. On chickenroad.radio.am they were added late and cost two full rewrite passes across 11 editions.
 
 ## Stage 1: Writer (one agent per edition, parallel)
-- Writes all 10 pages + strings.json directly in the native language (not translated from English). English editions (global, UK, CA, AU) written separately with local law, spelling, currency, payments.
+- Writes every page in the edition's researched page set (the five trust pages + the content pages from the SERP inventory) + strings.json directly in the native language (not translated from English). English editions (global, UK, CA, AU) written separately with local law, spelling, currency, payments.
 - Follows CONTENT_SPEC (front matter, `<section id>`, `{{BASE}}` links, CTA/FIG markers) and the content blueprint.
 - Talks about the game and to "you". No we/our on game pages. No review/guide/information/independent wording. Byline/disclosure come from strings.json.
 - Runs `check_content.py <ed>` until ALL OK.

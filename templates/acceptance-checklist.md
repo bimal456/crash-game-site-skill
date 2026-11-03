@@ -6,10 +6,11 @@ Mark every row `passed`, `failed`, `blocked` or `n/a` with real evidence (path/U
 |---|---|---|
 | Inputs | Game, sequel, geos + languages, tracking URL (or flagged placeholder) | |
 | Research | Ahrefs matching-terms + overview + serp-overview per edition; DataForSEO live SERP per edition; 3-5 competitor outlines per edition | |
+| Page inventory | Which pages each ranking site has for this game, with counts, in `research/outlines-<ed>.md`; the content page set chosen from it, not carried over from the last build | |
 | Facts | facts.md + claim-ledger.json with sources; provider restricted-countries checked | |
 | Localization | Regulator, legal truth, tax, helpline, self-exclusion, payments per edition, verified on official sources | |
-| Structure | `/` + `/<code>/` per edition, same slugs, 10 pages each + 404 | |
-| Word counts | home 2700-3000; demo/sequel/payments 1500-1800; others in range; prose 70%+ | |
+| Structure | `/` + `/<code>/` per edition, same slugs; the five trust pages (about, contact, responsible-gambling, terms, privacy) + home + 404 present in EVERY edition; the researched content pages present and listed in `PAGES`, each with a `WORD_RANGE` and `LINK_REQ` entry | |
+| Word counts | home 2700-3000; each content page 1500-1800; others in range; prose 70%+ | |
 | Positioning | 0 matches: guide, information/info site, independent, unofficial, not affiliated (all languages) | |
 | Voice | 0 matches: review, verdict, editorial team (all languages); 0 we/our on game pages | |
 | Byline / no disclosure | "Updated <date> · Sources" on every page; no author/team; and ZERO promotional-disclosure lines sitewide in any language (grep the build) | |

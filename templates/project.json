@@ -40,19 +40,27 @@
       "money_query_for_serp": ""
     }
   ],
-  "pages": [
-    "home",
-    "demo",
-    "<sequel_slug>",
-    "payments",
-    "about",
-    "contact",
-    "responsible-gambling",
-    "privacy",
-    "cookie-policy",
-    "terms",
-    "404"
-  ],
+  "pages": {
+    "_comment": "Five trust pages are mandatory in every edition. The content pages are decided from the SERP page inventory in research/outlines-<ed>.md, never carried over from a previous build.",
+    "always": [
+      "home",
+      "about",
+      "contact",
+      "responsible-gambling",
+      "terms",
+      "privacy"
+    ],
+    "content_pages_from_research": [
+      "<fill from the page inventory: e.g. demo, strategy, rtp, app, bonus, payments>"
+    ],
+    "cookie_policy": "add only if something actually sets a cookie, or an EU edition's privacy page links one",
+    "page_inventory_source": "research/outlines-<ed>.md",
+    "also_update": [
+      "PAGES in build.py",
+      "WORD_RANGE in check_content.py",
+      "LINK_REQ in check_content.py"
+    ]
+  },
   "word_targets": {
     "home": "2700-3000 (never over 3000)",
     "demo_sequel_payments": "1500-1800",
